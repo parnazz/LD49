@@ -10,4 +10,5 @@ public class EventManager
     public static Action<ElementType> OnCatInteractEvent = delegate { };
     public static Action<Transform> OnCorrectElementGivenEvent = delegate { };
     public static Action<Transform> OnIncorrectElementGivenEvent = delegate { };
+    public static Action OnTransitionToNewStage = delegate { };
 }

@@ -19,6 +19,7 @@ public class Cat : MonoBehaviour
         if (elementType == correctElement)
         {
             EventManager.OnCorrectElementGivenEvent?.Invoke(transform);
+            EventManager.OnTransitionToNewStage?.Invoke();
             return;
         }
 
