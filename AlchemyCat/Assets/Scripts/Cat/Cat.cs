@@ -18,7 +18,7 @@ public class Cat : MonoBehaviour
     {
         if (elementType == correctElement)
         {
-            EventManager.OnCorrectElementGivenEvent?.Invoke();
+            EventManager.OnCorrectElementGivenEvent?.Invoke(transform);
             return;
         }
 
@@ -27,19 +27,19 @@ public class Cat : MonoBehaviour
             case ElementType.Fire:
                 Debug.Log("Поливаю огнем");
                 // abilities.Add(FireAbility)
-                // abilities.Last().CastAbility()
                 break;
             case ElementType.Water:
                 Debug.Log("Заливаю пол водой");
                 // abilities.Add(WaterAbility)
-                // abilities.Last().CastAbility()
                 break;
             case ElementType.Air:
                 Debug.Log("Сдуваю героя");
                 // abilities.Add(AirAbility)
-                // abilities.Last().CastAbility()
                 break;
         }
+
+        EventManager.OnIncorrectElementGivenEvent?.Invoke(transform);
+        // abilities.Last().CastAbility()
     }
 
     private void OnDisable()
